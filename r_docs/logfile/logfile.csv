@@ -1,0 +1,5 @@
+file_name	seed	formula_x	formula_y
+NA	NA	NA	NA
+2021-03-05-16-14_seed_9072.png	9072	runif(1, -1, 1) * x_i^4 - tan(y_i^2)	runif(1, -1, 1) * y_i^3 - sin(x_i^2)
+2021-03-05-16-14_seed_630.png	630	runif(1, -1, 1) * x_i^4 - tan(y_i^2)	runif(1, -1, 1) * y_i^3 - sin(x_i^2)
+2021-03-05-16-15_seed_1187.png	1187	runif(1, -1, 1) * x_i^4 - tan(y_i^2)	runif(1, -1, 1) * y_i^3 - sin(x_i^2)
