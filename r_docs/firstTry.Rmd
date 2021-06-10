@@ -12,7 +12,7 @@ library(generativeart)
 source('../scripts/00-ttrc_style.R')
 ```
 
-The package works with a specific directory structure that fits my needs best. 
+The "generativeart" package works with a specific directory structure that fits my needs best. 
 The first step is to create it with setup_directories(). 
 All images are saved by default in img/everything/. 
 I use img/handpicked/ to choose the best ones. 

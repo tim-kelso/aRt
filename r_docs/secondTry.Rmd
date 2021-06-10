@@ -1,0 +1,45 @@
+---
+title: "Second Try"
+author: "Tim Kelso"
+date: "10/06/2021"
+output: html_document
+---
+Using the walkthrough
+https://ivelasq.rbind.io/blog/rtistry-intro/
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(viridis)
+library(ggdark)
+library(ggthemes)
+source('../scripts/00-ttrc_style.R')
+```
+
+# Plot function
+``` {r parametricEquation}
+#define center of the equation, number of points, and the coefficients of the equation
+genFun <- function(center = c(0, 0), npoints = 500, c1 = 1, c2 = 1, c3 = 1, c4 = 1, size_denom = 1, opacity_denom = 1, color_denom = 1){
+    t <- seq(0, 2*pi, length.out = npoints)
+    xx <- center[1] + c1*(sin(c2*t)*sin(c2*t))*(2^cos(cos(c3*c4*t)))
+    yy <- center[2] + c1*sin(sin(c2*t))*(cos(c3*c4*t)*cos(c3*c4*t))
+    rand_w <- sample(0:20, npoints, replace = TRUE)/size_denom
+    rand_o <- sample(1:100, npoints, replace = TRUE)/opacity_denom
+    rand_c <- sample(1:100, npoints, replace = TRUE)/color_denom
+    a <- data.frame(x = xx, y = yy, rand_w = rand_w, rand_o = rand_o, rand_c = rand_c)
+    
+    return(a)
+}
+
+dat <- 
+  genFun(c(0, 0), npoints = 4000, c1 = -2.5, c2 = -4, c3 = 4.28, c4 = -1, size_denom = 2, opacity_denom = 50, color_denom = 3)
+  
+ggplot(dat, aes(x, y, color = rand_c)) +
+  geom_point(size = dat$rand_w,
+             alpha = dat$rand_o) +
+  scale_color_viridis() +
+  dark_theme_void() +
+  theme(legend.position = "none")
+
+
+```
